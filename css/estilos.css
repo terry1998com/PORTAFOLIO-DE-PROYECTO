@@ -1,0 +1,371 @@
+/* Tipografía y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  color: #2b2d42;
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: rgba(57,0,0,255); 
+  color: white;             
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,87,0,255);
+  /* padding: 15px 40px; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: top 0.3s;
+}
+
+/* Oculto hacia arriba */
+.navbar.hide {
+  top: -100px; /* oculta la barra */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background: rgba(86,0,0,255);
+  padding: 20px 40px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 20px 40px;
+}
+
+.nav-links-buttons {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.logout-link:hover {
+  color: #ffdddd;
+}
+.nav-links li button {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.nav-links li button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  padding: 30px 20px 10px;
+  color: #1b1f3b;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+/* Sección QR */
+#lector-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  transition: all 0.3s ease;
+  min-height: 60vh;
+}
+
+#lector-wrapper.lector-inactivo {
+  flex-direction: column;
+}
+
+#lector-wrapper.lector-activo {
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+/* Asegura que el div .toggle-lector-btn conserve el alineamiento cuando cambia */
+.toggle-lector-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 200px;
+}
+
+.option-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;  /* Espaciado entre los elementos */
+  margin-bottom: 30px;  /* Espacio debajo */
+}
+
+.option form {
+  display: flex;
+  align-items: center;
+  gap: 10px;  /* Espaciado entre el input y el botón */
+  justify-content: center;
+}
+
+
+/* Estilo del input de la fecha */
+#fecha {
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;  /* Borde gris claro */
+  outline: none;
+  transition: border 0.3s ease;
+  width: 180px;  /* Asegura que el input tenga un tamaño adecuado */
+}
+
+/* Efecto de hover para el input */
+#fecha:hover,
+#fecha:focus {
+  border-color: rgba(86,0,0,255);  /* Cambia el color del borde cuando está en foco */
+  box-shadow: 0 0 5px rgba(86,0,0,255);  /* Agrega una sombra suave al enfocarse */
+}
+
+/* Estilo del botón de búsqueda */
+.option button {
+  padding: 10px 20px;
+  background-color: rgba(86,0,0,255);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option button:hover {
+  background-color: rgba(45,0,0,255);
+  transform: scale(1.05);
+}
+
+.result-scan {
+  margin: 0;
+  border: #1b1f3b;
+  box-shadow: #2f9e44;
+}
+
+.panel-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#btnToggleLector {
+  display: block;
+  margin: 30px auto;
+  background-color: rgba(86,0,0,255);
+  color: #ffffff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#btnToggleLector:hover {
+  background-color: rgba(45,0,0,255);
+}
+
+/* Lector QR */
+#reader {
+  aspect-ratio: 4 / 3;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+#reader video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#reader:hover {
+  transform: scale(1.02);
+}
+
+/* Resultado QR */
+#resultado {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 1.3em;
+  color: #2f9e44;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Tabla de registros */
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background-color: rgba(97,0,0,255);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f1f1;
+}
+
+/* Botones */
+button {
+  display: block;
+  margin: 30px auto;
+  background-color: rgba(86,0,0,255);
+  color: #ffffff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: rgba(45,0,0,255);
+  transform: scale(1.05);
+}
+
+/* Formularios */
+form {
+  text-align: center;
+  padding: 20px;
+}
+
+.btn-confirmar {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #18662b;
+}
+
+.btn-confirmar:hover {
+  background-color: #2f9e44;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(47, 158, 68, 0.4);
+}
+
+.btn-confirmar:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-denegar {
+  background-color: rgb(0, 45, 128);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #191866;
+}
+
+.btn-denegar:hover {
+  background-color: #2f639e;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(47, 49, 158, 0.4);
+}
+
+.btn-denegar:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cancelar {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #b22222;
+}
+
+.btn-cancelar:hover {
+  background-color: crimson;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(220, 20, 60, 0.4);
+}
+
+.btn-cancelar:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
