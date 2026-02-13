@@ -1,0 +1,272 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f2f0eb, #e0d8cf);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+
+/* Barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,87,0,255);
+  /* padding: 15px 40px; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: top 0.3s;
+}
+
+/* Oculto hacia arriba */
+.navbar.hide {
+  top: -100px; /* oculta la barra */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  background: rgba(86,0,0,255);
+  padding: 20px 40px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 20px 40px;
+}
+
+.nav-links form {
+  margin: 0;
+}
+
+.nav-links-buttons {
+  background: #ffffff10;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-links-buttons:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Contenedor principal */
+.main-container {
+  background-color: #fff;
+  max-width: 480px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  animation: fadeIn 0.8s ease-out;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #560000;
+}
+
+.input-group label {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background: white;
+  padding: 0 6px;
+  font-size: 13px;
+  color: #888;
+  pointer-events: none;
+}
+
+/* Botón */
+.create-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #560000;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.create-btn:hover {
+  background-color: #2d0000;
+  transform: scale(1.02);
+}
+
+.btn-confirmar {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #18662b;
+}
+
+.btn-confirmar:hover {
+  background-color: #2f9e44;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(47, 158, 68, 0.4);
+}
+
+.btn-confirmar:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-denegar {
+  background-color: rgb(0, 45, 128);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #191866;
+}
+
+.btn-denegar:hover {
+  background-color: #2f639e;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(47, 49, 158, 0.4);
+}
+
+.btn-denegar:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-cancelar {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 0 #b22222;
+}
+
+.btn-cancelar:hover {
+  background-color: crimson;
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(220, 20, 60, 0.4);
+}
+
+.btn-cancelar:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-group select {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background-color: white;
+  color: #333;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  appearance: none; /* quita la flechita por defecto en algunos navegadores */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658c-.566-.65-.106-1.658.753-1.658h9.592c.86 0 1.32 1.008.753 1.658l-4.796 5.482a1 1 0 0 1-1.506 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
+.input-group select:focus {
+  border-color: #560000;
+  box-shadow: 0 0 0 2px rgba(86, 0, 0, 0.1);
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main-container {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,193 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #c05a2a, #df7030);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::selection {
+  background-color: rgba(57, 0, 0, 255);
+  color: white;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 15px;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 8px 32px #a1887f22, 0 2px 12px #a1887f11;
+  border-radius: 14px;
+  border: 1.5px solid #e0d7ce;
+  animation: fadeIn 1s ease forwards;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  margin: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  animation: fadeInSlide 1s ease;
+}
+
+.subtitle {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 15px;
+  color: #333;
+  animation: fadeInSlide 1s ease;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border: none;
+  border-bottom: 2px solid #aaa;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  color: #888;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -15px;
+  font-size: 12px;
+  color: rgba(86, 0, 0, 255);
+}
+
+.eye-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px;
+}
+
+.material-symbols-outlined {
+  font-size: 24px;
+  color: #888;
+  user-select: none;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background: rgba(86, 0, 0, 255);
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: rgba(45, 0, 0, 255);
+}
+
+.banner-message {
+  background-color: #ff4f4f;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 20px;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  animation: slideDownBanner 0.5s ease forwards, fadeOut 0.5s ease 4s forwards;
+  border-bottom: 3px solid #c70000;
+  font-size: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownBanner {
+  to {
+    top: 0;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 40px 20px;
+  }
+}
